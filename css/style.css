@@ -1,0 +1,122 @@
+.subnav {
+    background-color: #EEEEEE;
+    background-image: -moz-linear-gradient(center top , #F5F5F5 0%, #EEEEEE 100%);
+    background-repeat: repeat-x;
+    border: 1px solid #E5E5E5;
+    border-radius: 4px 4px 4px 4px;
+    height: 36px;
+    width: 100%;
+}
+.subnav .nav {
+    margin-bottom: 0;
+}
+.subnav .nav > li > a {
+    border-left: 1px solid #F5F5F5;
+    border-radius: 0 0 0 0;
+    border-right: 1px solid #E5E5E5;
+    margin: 0;
+    padding-bottom: 11px;
+    padding-top: 11px;
+}
+.subnav .nav > .active > a, .subnav .nav > .active > a:hover {
+    background-color: #E9E9E9;
+    border-left: 0 none;
+    border-right-color: #DDDDDD;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05) inset;
+    color: #777777;
+    padding-left: 13px;
+}
+.subnav .nav > .active > a .caret, .subnav .nav > .active > a:hover .caret {
+    border-top-color: #777777;
+}
+.subnav .nav > li:first-child > a, .subnav .nav > li:first-child > a:hover {
+    border-left: 0 none;
+    border-radius: 4px 0 0 4px;
+    padding-left: 12px;
+}
+.subnav .nav > li:last-child > a {
+    border-right: 0 none;
+}
+.subnav .dropdown-menu {
+    border-radius: 0 0 4px 4px;
+}
+.hidden{display: none;}
+
+/* tables */
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+    /*background-color: #e6EEEE;*/
+}
+table.tablesorter thead tr .header {
+    background-image: url(bg.gif);
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+}
+table.tablesorter thead tr .headerSortUp {
+    background-image: url(asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+    background-image: url(desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+    background-color: #e6EEEE;
+    /*background-color: #8dbdd8;*/
+}
+
+.icon-male {
+    background-image: url("glyphicons_246_male.png");
+    background-position: 0 0;
+    background-size: 14px 14px;
+}
+.icon-female {
+    background-image: url("glyphicons_247_female.png");
+    background-position: 0 0;
+    background-size: 14px 14px;
+}
+.icon-girl {
+    background-image: url("glyphicons_004_girl.png");
+    background-position: 0 0;
+    background-size: 14px 14px;
+}
+.icon-phone {
+    background-image: url("glyphicons_169_phone.png");
+    background-position: 0 0;
+    background-size: 14px 14px;
+}
+.popover{
+    width: 300px;
+}
+.footer{
+    height: 40px;
+}
+#PriceTable,#Tuto{
+    width: 800px;
+    margin-left: -400px;
+}
+.none {
+    background-color: #999;
+}
+
+/* ---------- Css pour le decompte ----------*/
+.numbers .bloc {
+    width: 97px;
+    height: 67px;
+    background: url(../img/number.png) no-repeat;
+    float: left;
+    padding-top: 30px;
+    text-align: center;
+    color: #767676;
+    margin-right: 30px; }
+    .numbers .bloc strong {
+      font-size: 60px;
+      font-weight: bold;
+      text-align: center;
+      display: block;
+      color: #2a3c49;
+      margin-bottom: 15px; }
+  .numbers .last {
+    margin-right: 0px; }
+  .numbers {
+    overflow: hidden;
+    *zoom: 1;
+    margin-top: 40px; }
