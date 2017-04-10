@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.11.1deb2+deb7u8
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Client: localhost
--- Généré le: Dim 09 Avril 2017 à 12:52
--- Version du serveur: 5.5.54
--- Version de PHP: 5.6.30-1~dotdeb+7.1
+-- Client :  127.0.0.1
+-- Généré le :  Mar 11 Avril 2017 à 00:01
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données: `spring_festival`
+-- Base de données :  `springfestival`
 --
 
 -- --------------------------------------------------------
@@ -37,19 +37,18 @@ CREATE TABLE IF NOT EXISTS `administrateurs` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Contenu de la table `administrateurs`
 --
 
 INSERT INTO `administrateurs` (`id`, `email`, `password`, `nom`, `prenom`, `online`, `role_id`) VALUES
-(3, 'antoine.giraud@2015.icam.fr', '2d64fc8596f4f849e40c91b244c00dcd', 'Giraud', 'Antoine', 1, 1),
 (7, 'thibaut.de-gouberville@2018.icam.fr', '5a62f05f47bb9f8b767e198c6ed6044f', 'Goubi', 'Thibaut', 1, 1),
 (10, 'guillaume.dubois-malafosse@2019.icam.fr', 'dd922c250e6727505e12ce7c5cc00298', 'Dubois', 'Guillaume', 1, 1),
-(11, 'logistique119@gala.fr', '6bcb255e3f83d578d2a617961c22869d', 'Logistique', 'Inscripteur', 1, 2),
 (12, 'gregoire.dervaux@2019.icam.fr', 'a82dfac3a9784c812ca0d01d4505f531', 'Dervaux', 'Grégoire', 1, 1),
-(13, 'jean.moyart@2018.icam.fr', 'f1ad6c320f3e78e9a9386e8cfa6d60d8', 'Moyart', 'Jean', 1, 1);
+(13, 'jean.moyart@2018.icam.fr', 'f1ad6c320f3e78e9a9386e8cfa6d60d8', 'Moyart', 'Jean', 1, 1),
+(14, 'membre@membre.me', '5a99c8cac333affeed05a24fe0d6f61c', 'Membre', 'membre', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -92,7 +91,7 @@ INSERT INTO `configs` (`name`, `value`) VALUES
 ('maintenance', ''),
 ('modifications_places', '1'),
 ('quota_soirees', '800'),
-('websitename', 'Gala des Icam 119');
+('websitename', 'Spring Festival');
 
 -- --------------------------------------------------------
 
@@ -3652,38 +3651,36 @@ CREATE TABLE IF NOT EXISTS `guests` (
   `inscription` datetime NOT NULL,
   `sexe` tinyint(1) NOT NULL DEFAULT '1',
   `bracelet_id` int(4) DEFAULT NULL,
-  `plage_horaire_entrees` varchar(255) NOT NULL DEFAULT '22h30-23h',
   `image` varchar(255) DEFAULT NULL,
   `paiement` varchar(50) NOT NULL DEFAULT 'espece',
   `price` float NOT NULL DEFAULT '17',
-  `tickets_boisson` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
 -- Contenu de la table `guests`
 --
 
-INSERT INTO `guests` (`id`, `nom`, `prenom`, `is_icam`, `promo`, `email`, `telephone`, `inscription`, `sexe`, `bracelet_id`, `plage_horaire_entrees`, `image`, `paiement`, `price`, `tickets_boisson`) VALUES
-(7, 'Dubois-malafosse', 'Guillaume', 1, '119', 'guillaume.dubois-malafosse@2019.icam.fr', '', '2017-04-07 11:58:41', 0, NULL, '', 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=62854', 'PayIcam', 15, 0),
-(8, 'Gombert', 'Anatole', 1, '118', 'anatole.gombert@2018.icam.fr', '0645512543', '2017-04-07 16:00:20', 0, NULL, '', 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=65290', 'PayIcam', 15, 0),
-(9, 'Thouvenin', 'Nicolas', 1, '118', 'nicolas.thouvenin@2018.icam.fr', '0786433615', '2017-04-07 16:02:02', 0, NULL, '', 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=60515', 'PayIcam', 15, 0),
-(10, 'Lafont de sentenac', 'Guilhem', 1, '118', 'guilhem.lafont-de-sentenac@2018.icam.fr', '0699735055', '2017-04-07 16:02:29', 0, NULL, '', 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=60505', 'PayIcam', 15, 0),
-(11, 'Dufossez', 'Foucauld', 1, '118', 'foucauld.dufossez@2018.icam.fr', '0665283675', '2017-04-07 16:04:44', 0, NULL, '', 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=60482', 'PayIcam', 15, 0),
-(12, 'Sauvage', 'Julien', 1, '117', 'julien.sauvage@2017.icam.fr', '0635204359', '2017-04-07 16:11:31', 0, NULL, '', 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=47867', 'PayIcam', 15, 0),
-(13, 'Grenez', 'Victor', 1, '117', 'victor.grenez@2017.icam.fr', '0650762644', '2017-04-07 16:29:10', 0, NULL, '', 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=47868', 'PayIcam', 15, 0),
-(14, 'Grenez', 'Lucien', 1, '117', 'lucien.grenez@2017.icam.fr', '0650745030', '2017-04-07 16:48:30', 0, NULL, '', 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=47895', 'PayIcam', 15, 0),
-(15, 'Rousse', 'Lucie', 0, NULL, NULL, NULL, '2017-04-07 16:48:30', 1, NULL, '', '', 'PayIcam', 15, 0),
-(16, 'Minier', 'Thomas', 1, '2020', 'thomas.minier@2020.icam.fr', '076088980', '2017-04-07 17:42:59', 0, NULL, '', 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=65122', 'PayIcam', 15, 0),
-(17, 'Buysschaert', 'Margaux', 0, NULL, NULL, NULL, '2017-04-07 17:42:59', 1, NULL, '', '', 'PayIcam', 15, 0),
-(18, 'Vermaut', 'R‚mi', 1, '2021', 'remi.vermaut@2021.icam.fr', '0652552488', '2017-04-07 17:55:29', 0, NULL, '', 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=68364', 'PayIcam', 15, 0),
-(19, 'Carnois', 'Chloé ', 0, NULL, NULL, NULL, '2017-04-07 17:55:29', 1, NULL, '', '', 'PayIcam', 15, 0),
-(20, 'Reynol', 'Julia', 1, '119', 'julia.reynol@2019.icam.fr', '0676742209', '2017-04-07 18:43:34', 0, NULL, '', 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=62845', 'PayIcam', 15, 0),
-(21, 'Riquiez', 'Pauline ', 0, NULL, NULL, NULL, '2017-04-07 18:43:34', 1, NULL, '', '', 'PayIcam', 15, 0),
-(22, 'Buzin', 'Louis', 1, '2021', 'louis.buzin@2021.icam.fr', '0614793703', '2017-04-07 19:43:42', 0, NULL, '', 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=68405', 'PayIcam', 15, 0),
-(23, 'VanHullebuche', 'Luna', 0, NULL, NULL, NULL, '2017-04-07 19:43:42', 1, NULL, '', '', 'PayIcam', 15, 0),
-(24, 'Rolion', 'M‚lanie', 1, '119', 'melanie.rolion@2019.icam.fr', '', '2017-04-08 22:55:09', 0, NULL, '', 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=62833', 'PayIcam', 15, 0),
-(25, 'berta', 'alice', 0, NULL, NULL, NULL, '2017-04-08 22:55:09', 1, NULL, '', '', 'PayIcam', 15, 0);
+INSERT INTO `guests` (`id`, `nom`, `prenom`, `is_icam`, `promo`, `email`, `telephone`, `inscription`, `sexe`, `bracelet_id`, `image`, `paiement`, `price`) VALUES
+(7, 'Dubois-malafosse', 'Guillaume', 1, '119', 'guillaume.dubois-malafosse@2019.icam.fr', '', '2017-04-07 11:58:41', 1, 0, '', 'PayIcam', 0),
+(8, 'Gombert', 'Anatole', 1, '118', 'anatole.gombert@2018.icam.fr', '0645512543', '2017-04-07 16:00:20', 0, NULL, 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=65290', 'PayIcam', 15),
+(9, 'Thouvenin', 'Nicolas', 1, '118', 'nicolas.thouvenin@2018.icam.fr', '0786433615', '2017-04-07 16:02:02', 0, NULL, 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=60515', 'PayIcam', 15),
+(10, 'Lafont de sentenac', 'Guilhem', 1, '118', 'guilhem.lafont-de-sentenac@2018.icam.fr', '0699735055', '2017-04-07 16:02:29', 0, NULL, 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=60505', 'PayIcam', 15),
+(11, 'Dufossez', 'Foucauld', 1, '118', 'foucauld.dufossez@2018.icam.fr', '0665283675', '2017-04-07 16:04:44', 0, NULL, 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=60482', 'PayIcam', 15),
+(12, 'Sauvage', 'Julien', 1, '117', 'julien.sauvage@2017.icam.fr', '0635204359', '2017-04-07 16:11:31', 0, NULL, 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=47867', 'PayIcam', 15),
+(13, 'Grenez', 'Victor', 1, '117', 'victor.grenez@2017.icam.fr', '0650762644', '2017-04-07 16:29:10', 0, NULL, 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=47868', 'PayIcam', 15),
+(14, 'Grenez', 'Lucien', 1, '117', 'lucien.grenez@2017.icam.fr', '0650745030', '2017-04-07 16:48:30', 0, NULL, 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=47895', 'PayIcam', 15),
+(15, 'Rousse', 'Lucie', 0, NULL, NULL, NULL, '2017-04-07 16:48:30', 1, NULL, '', 'PayIcam', 15),
+(16, 'Minier', 'Thomas', 1, '2020', 'thomas.minier@2020.icam.fr', '076088980', '2017-04-07 17:42:59', 0, NULL, 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=65122', 'PayIcam', 15),
+(17, 'Buysschaert', 'Margaux', 0, NULL, NULL, NULL, '2017-04-07 17:42:59', 1, NULL, '', 'PayIcam', 15),
+(18, 'Vermaut', 'R‚mi', 1, '2021', 'remi.vermaut@2021.icam.fr', '0652552488', '2017-04-07 17:55:29', 0, NULL, 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=68364', 'PayIcam', 15),
+(19, 'Carnois', 'Chloé ', 0, NULL, NULL, NULL, '2017-04-07 17:55:29', 1, NULL, '', 'PayIcam', 15),
+(20, 'Reynol', 'Julia', 1, '119', 'julia.reynol@2019.icam.fr', '0676742209', '2017-04-07 18:43:34', 0, NULL, 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=62845', 'PayIcam', 15),
+(21, 'Riquiez', 'Pauline ', 0, NULL, NULL, NULL, '2017-04-07 18:43:34', 1, NULL, '', 'PayIcam', 15),
+(22, 'Buzin', 'Louis', 1, '2021', 'louis.buzin@2021.icam.fr', '0614793703', '2017-04-07 19:43:42', 0, NULL, 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=68405', 'PayIcam', 15),
+(23, 'VanHullebuche', 'Luna', 0, NULL, NULL, NULL, '2017-04-07 19:43:42', 1, NULL, '', 'PayIcam', 15),
+(24, 'Rolion', 'M‚lanie', 1, '119', 'melanie.rolion@2019.icam.fr', '', '2017-04-08 22:55:09', 0, NULL, 'http://synergiciel.cecam.net/ViewPhoto.cecam?IdPersonne=62833', 'PayIcam', 15),
+(25, 'berta', 'alice', 0, NULL, NULL, NULL, '2017-04-08 22:55:09', 1, NULL, '', 'PayIcam', 15);
 
 -- --------------------------------------------------------
 
