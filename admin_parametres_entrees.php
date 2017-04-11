@@ -16,16 +16,12 @@
 	}
 	
 ?>
-<?php $title_for_layout = 'Paramètres du soir même du Spring'; ?>
+<?php $title_for_layout = 'Paramètres du jour même du Spring'; ?>
 <?php include 'includes/header.php'; ?>
-<h1 class="page-header"><img src="img/icons/gear_48.png" alt="Paramètres"> Paramêtrer les entrées</h1>
+<h1 class="page-header"><img src="img/icons/gear_48.png" alt="Paramètres"> Paramétrer les entrées</h1>
 
 <p>
-	<a href="admin_parametres_entrees.php?reset_entrees=1" class="btn btn-danger btn-large" id="ResetEntrees">Réinitialiser les entrées pour le soir même</a>
-</p>
-
-<p>
-	<a href="admin_parametres_entrees.php?reset_price=1" class="btn btn-info btn-large" id="ResetPrice">Réinitialiser les prix de tout le monde</a>
+	<a href="admin_parametres_entrees.php?reset_entrees=1" class="btn btn-danger btn-large" id="ResetEntrees">Réinitialiser les entrées pour le jour même</a>
 </p>
 
 <script type="text/javascript">

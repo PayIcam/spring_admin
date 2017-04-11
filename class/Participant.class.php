@@ -490,7 +490,7 @@ class Participant{
 		}
 		$DB->query('TRUNCATE TABLE entrees;');
 		$DB->save('entrees',array('fields'=>array('guest_id'/*,'arrived','arrival_time'*/),'values'=>$Guests),'insert');
-		$DB->query('UPDATE entrees LEFT JOIN guests ON id = guest_id SET `arrived` = 1, `arrival_time` = CURRENT_TIMESTAMP( ) WHERE promo = 119;');
+		$DB->query('UPDATE entrees LEFT JOIN guests ON id = guest_id SET `arrived` = 1, `arrival_time` = CURRENT_TIMESTAMP( ) WHERE promo = 2018;');
 		return true;
 	}
 

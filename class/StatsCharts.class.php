@@ -20,7 +20,7 @@ class StatsCharts{
 			return Functions::getFirstVals($DB->query('SELECT count(*) count, DATE(inscription) date FROM `guests` WHERE is_icam = 1 GROUP BY DATE(inscription)'));
 		}elseif ($guestType == 'guest') {
 			return Functions::getFirstVals($DB->query('SELECT count(*) count, DATE(inscription) date FROM `guests` WHERE is_icam = 0 GROUP BY DATE(inscription)'));
-		elseif ($guestType == 'soiree') {
+		}elseif ($guestType == 'soiree') {
 			return Functions::getFirstVals($DB->query('SELECT count(*) count, DATE(inscription) date FROM `guests` GROUP BY DATE(inscription)'));
 		}elseif ($guestType == 'filles') {
 			return Functions::getFirstVals($DB->query('SELECT count(*) count, DATE(inscription) date FROM `guests` WHERE sexe = 2 GROUP BY DATE(inscription)'));
