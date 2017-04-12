@@ -88,10 +88,9 @@ require_once 'includes/_header.php';
                 <ul class="dropdown-menu">
                   
                   <?php if ($Auth->isAdmin()){ ?>
-                  <li><a href="statistics_entrees.php"><i class="icon-info-sign"></i> Info entrées</a></li>
-                  <li class="divider"></li>
                   <li><a href="admin_parametres_entrees.php"><i class="icon-wrench"></i> Paramêtres jour-même</a></li>
                   <?php } ?>
+                  <li class="divider"></li>
 
                   <li><a href="admin_liste_guests_arrived.php"><i class="icon-plus"></i> Entrées</a></li>
 

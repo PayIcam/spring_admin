@@ -3,6 +3,9 @@
   $Auth->allow('admin');
 
 	require_once 'class/Participant.class.php';
+	require_once 'class/StatsCharts.class.php';
+    require_once 'class/ProgressBars.class.php';
+    $PBars = new ProgressBars();
 
 	if (!empty($_GET['reset_entrees'])) {
 		Participant::resetEntrees();
@@ -18,8 +21,18 @@
 ?>
 <?php $title_for_layout = 'Paramètres du jour même du Spring'; ?>
 <?php include 'includes/header.php'; ?>
-<h1 class="page-header"><img src="img/icons/gear_48.png" alt="Paramètres"> Paramétrer les entrées</h1>
+<h1 class="page-header"><?php echo $title_for_layout; ?></h1>
 
+<table class="table">
+    <!-- <caption><h2>Contenu du site</h2></caption> -->
+    <tbody>
+        <tr>
+          <td><strong><?php echo $PBars->totalGuestsArrived.' / '.$PBars->totalGuests; ?></strong></td>
+          <td><?php echo $PBars->getGuestsArrival(200); ?></td>
+          <td>Invités arrivés au Spring</td>
+        </tr>
+    </tbody>
+</table>
 <p>
 	<a href="admin_parametres_entrees.php?reset_entrees=1" class="btn btn-danger btn-large" id="ResetEntrees">Réinitialiser les entrées pour le jour même</a>
 </p>
