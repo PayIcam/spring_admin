@@ -99,7 +99,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
           <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
           <input type="password" name="password" class="form-control" placeholder="Password" required>
           <button class="btn btn-lg btn-primary btn-block" type="submit">Se connecter</button>
-          <a href="https://cas.icam.fr/cas/login?service=<?= urlencode(Config::get('galadesicam_url')) ?>" class="btn btn-lg btn-info btn-block">Or click to log in using CAS Icam</a>
+          <a href="https://cas.icam.fr/cas/login?service=<?= urlencode(Config::get('spring_url')) ?>" class="btn btn-lg btn-info btn-block">Or click to log in using CAS Icam</a>
         </form>
 
     <script src="js/jquery.js"></script>
